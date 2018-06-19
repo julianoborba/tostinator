@@ -11,6 +11,6 @@ public class StringTransformerImpl implements StringTransformer {
     // Just place it and call from the overridden method above.
 
     private String decoder(String string) {
-        return "Find your decoder... may the force be with you.";
+        return "Find or craft your decoder... may the force be with you.";
     }
 }

@@ -28,16 +28,20 @@ public class StringTransformerExecutor {
     }
 
     public void execute(final String fileName, final String classesPath) {
+
         final List<String> strings = extractStrings(fileName);
         final Object newStringTransformer = getNewStringTransformerInstance(classesPath);
         transformStrings(strings, (StringTransformer) newStringTransformer);
     }
 
     private List<String> extractStrings(final String fileName) {
+
         final List<String> strings = new ArrayList<>();
         for (final String line : getFileLines(fileName)) {
+
             final Matcher matcher = PATTERN_TO_CAPTURE_FILLED_QUOTATION_MARK.matcher(line);
             while (matcher.find()) {
+
                 final String group = matcher.group();
                 final String string = group.substring(1, group.length() - 1);
                 if (!string.isEmpty()) {
@@ -49,9 +53,12 @@ public class StringTransformerExecutor {
     }
 
     private List<String> getFileLines(final String fileName) {
+
         try (final Stream<String> stream = Files.lines(Paths.get(fileName))) {
+
             return stream.collect(Collectors.toList());
         } catch (final IOException exception) {
+
             if (debug) {
                 exception.printStackTrace();
             }
@@ -60,7 +67,9 @@ public class StringTransformerExecutor {
     }
 
     private Object getNewStringTransformerInstance(final String classesPath) {
+
         try {
+
             final URL[] urls = {new File(classesPath).toURI().toURL()};
             final ClassLoader classLoader = new URLClassLoader(urls);
             return classLoader.loadClass(TRANSFORMER_IMPLEMENTATION).newInstance();
@@ -73,8 +82,11 @@ public class StringTransformerExecutor {
     }
 
     private void transformStrings(final List<String> strings, final StringTransformer newStringTransformer) {
+
         for (final String string : strings) {
+
             try {
+
                 System.out.println(newStringTransformer.apply(string));
             } catch (Exception exception) {
                 if (debug) {
