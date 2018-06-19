@@ -12,20 +12,20 @@ public class App {
     public static void main(final String[] args) throws IOException {
 
         if (args.length == 0 || Arrays.asList(args).contains(HELP)) {
-            System.out.println("usage");
-            System.out.println("\tjava -jar tostinator.jar /classes/path decompiledFile.java [options]\n\n");
+            System.out.println("\n\nusage");
+            System.out.println("\tjava -jar tostinator.jar /classes/path decompiledFile.java [options]\n");
             System.out.println("options");
             System.out.println("\tdebug - generate detailed exceptions");
-            System.out.println("\tdeployResources - install classes on defined path\n\n");
+            System.out.println("\tdeployResources - install classes on defined path\n");
             System.out.println("information");
             System.out.println("\tyou need to deploy that tool resources and grab the translation method");
-            System.out.println("\tfrom your malware sample and place it in the indicated area\n\n");
+            System.out.println("\tfrom your malware sample and place it in the indicated area\n");
             System.out.println("usage sample");
             System.out.println("\tto install resources:");
             System.out.println("\t\tjava -jar tostinator.jar \"/home/user/Classes\" deployResources");
             System.out.println("\tto get transformed strings:");
-            System.out.println("\t\tjava -jar tostinator.jar \"/home/user/Classes\" \"/home/user/Downloads/malware/java/decompiled.java\"\n\n\n\n");
-            System.out.println("\"You knows fear when Hide and Seek turns into a game where you REALLY don't want to be found\"\n\n");
+            System.out.println("\t\tjava -jar tostinator.jar \"/home/user/Classes\" \"/home/user/Downloads/malware/java/decompiled.java\"\n\n");
+            System.out.println("\"You knows fear when Hide and Seek turns into a game where you REALLY don't want to be found\"\n");
             System.out.println("  .\n ..:\n\n");
             return;
         }

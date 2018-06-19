@@ -26,7 +26,7 @@ public class ResourceDeployer {
         org.apache.commons.io.IOUtils.closeQuietly(transformerImplementation);
 
         System.out.println("\n\nedit the transformer implementation, adding the");
-        System.out.println("malware translation function in the reserved area\n\n");
-        System.out.println("\tnano ".concat(classesPath).concat(ORG_BR_REVERSING).concat("/").concat(STRING_TRANSFORMER_IMPL_JAVA).concat("\n\n"));
+        System.out.println("malware translation function in the reserved area\n");
+        System.out.println("\tnano ".concat(classesPath).concat(ORG_BR_REVERSING).concat("/").concat(STRING_TRANSFORMER_IMPL_JAVA).concat("\n"));
     }
 }
